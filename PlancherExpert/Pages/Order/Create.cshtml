@@ -1,0 +1,79 @@
+﻿@page
+@model PlancherExpert.Pages.Order.CreateModel
+@{
+    ViewData["title"] = "Order Create";
+}
+
+
+<div class="product">
+	<div class="mb-5">
+		<h2>Create Order</h2>
+		<hr />
+	</div>
+
+	<div class="order-create mb-3">
+		<form method="post">
+			<div class="row mb-2">
+				<label for="floorcover" class="col-sm-3 col-form-labek">Floor Covers</label>
+				<div class="col-sm-6">
+					<select class="form-select" name="floorcover" id="floorcover">
+						<option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+						<option value="mercedes">Mercedes</option>
+						<option value="audi">Audi</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row mb-2">
+				<label for="width" class="col-sm-3 col-form-labek">Width</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" id="width" name="width" />
+				</div>
+			</div>
+
+			<div class="row mb-4">
+				<label for="height" class="col-sm-3 col-form-labek">Height</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" id="height" name="height" />
+				</div>
+			</div>
+
+			<div class="row mb-2">
+				<div class="offset-sm-3 col-sm-3 d-grid">
+					<button type="submit" class="btn btn-primary">Order</button>
+				</div>
+				<div class="col-sm-3 d-grid">
+					<a class="btn btn-outline-primary" asp-page="/Index" role="button">Cancel</a>
+				</div>
+			</div>
+
+		</form>
+	</div>
+
+	<div class="mb-3">
+		<hr />
+		<h2>Floor Covers</h2>
+	</div>
+
+	<div>
+		<table class="table align-middle mb-0 bg-white">
+			<thead class="bg-light">
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Name</th>
+					<th scope="col">Price (m<sup>2</sup>)</th>
+					<th scope="col">Installation (m<sup>2</sup>)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td scope="col">#</td>
+					<td scope="col">#</td>
+					<td scope="col">#</td>
+					<td scope="col">#</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

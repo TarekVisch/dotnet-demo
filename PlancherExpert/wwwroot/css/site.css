@@ -248,16 +248,53 @@ h6 {
   }
 }
 
+.navbar .button-primary,
+.navbar .button-secondary {
+    border: 1px solid #f03c02;
+    margin: 0;
+    padding: 10px 15px;
+    border-radius: 2px;
+}
+
+.navbar .button-secondary:active,
+.navbar .button-secondary:focus {
+    padding: 10px 15px;
+    margin: 0 20px;
+}
+
+.navbar .button-primary:focus {
+    padding: 10px 15px;
+}
+
+.navbar .button-primary {
+    background-color: #f03c02;
+    color: #ffffff;
+}
+
+.navbar .button-primary:hover {
+    color: #ffffff;
+    background-color: #fd5c28;
+}
+
+.navbar .button-secondary {
+    color: #f03c02;
+    margin: 0px 20px;
+}
+
+.navbar .button-secondary:hover {
+    color: #fff;
+    background-color: #f03c02;
+}
 /**
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: #2b2320;
-  font-size: 28px;
-  cursor: pointer;
-  display: none;
-  line-height: 0;
-  transition: 0.5s;
+    color: #2b2320;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
 }
 
 .mobile-nav-toggle.bi-x {
