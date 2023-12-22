@@ -1,0 +1,85 @@
+﻿@page
+@model IndexModel
+@{
+	ViewData["Title"] = "Home page";
+}
+
+<section id="hero">
+	<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+		<div class="carousel-inner" role="listbox">
+			<div class="carousel-item active" style="background-image: url(/images/slide/slide-3.jpg);">
+				<div class="carousel-container">
+					<div class="carousel-content animate__animated animate__fadeInUp">
+						<h2>Welcome to PLANCHEREXPERT</h2>
+						<p>At PlacherExpert, we understand the importance of a beautifully designed and well-finished floor. Whether you're looking to enhance the aesthetics of your home or revamp your commercial space, our expert flooring services have got you covered.</p>
+						<div class="text-center"><a asp-area="" asp-page="/about" class="btn-get-started">Read More</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon bx bx-left-arrow" aria-hidden="true"></span>
+		</a>
+
+		<a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+			<span class="carousel-control-next-icon bx bx-right-arrow" aria-hidden="true"></span>
+		</a>
+
+		<ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+	</div>
+</section>
+
+<main id="main">
+	<section id="services" class="services">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="icon-box" data-aos="fade-up">
+						<div class="icon"><i class="bi bi-briefcase"></i></div>
+						<h4 class="title"><a href=""> Hardwood Flooring</a></h4>
+						<p class="description">Elevate your space with the timeless beauty and durability of hardwood floors. Choose from a variety of wood species and finishes to achieve the perfect look.</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+						<div class="icon"><i class="bi bi-card-checklist"></i></div>
+						<h4 class="title"><a href="">Laminate Flooring</a></h4>
+						<p class="description">Achieve the look of hardwood or tile at a fraction of the cost with our high-quality laminate flooring options. Durable, stylish, and easy to maintain.</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+						<div class="icon"><i class="bi bi-bar-chart"></i></div>
+						<h4 class="title"><a href="">Vinyl Flooring</a></h4>
+						<p class="description">Experience the versatility of vinyl flooring – a waterproof and resilient option available in an array of styles, including luxury vinyl plank and tile.</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+						<div class="icon"><i class="bi bi-binoculars"></i></div>
+						<h4 class="title"><a href="">Carpet Installation</a></h4>
+						<p class="description">Add warmth and comfort to your space with our premium carpeting options. From plush carpets for bedrooms to durable choices for high-traffic areas, we have it all.</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+						<div class="icon"><i class="bi bi-brightness-high"></i></div>
+						<h4 class="title"><a href="">Tile and Stone</a></h4>
+						<p class="description">Explore the elegance of tile and stone flooring. Our selection includes a variety of materials and designs to enhance the aesthetic appeal of any room.</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+						<div class="icon"><i class="bi bi-calendar4-week"></i></div>
+						<h4 class="title"><a href="">Commercial Flooring Solutions</a></h4>
+						<p class="description">Boost your business ambiance with tailored, durable flooring for high-traffic areas. Elevate professionalism effortlessly.</p>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</section>
+</main>

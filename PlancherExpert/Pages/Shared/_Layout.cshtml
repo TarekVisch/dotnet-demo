@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - PlancherExpert</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/PlancherExpert.styles.css" asp-append-version="true" />
+</head>
+<body>
+	<div class="page">
+		<header id="header" class="d-flex align-items-center">
+			<div class="container d-flex justify-content-between">
+
+				<div class="logo">
+					<h1 class="text-light"><a href="index.html">PLANCHEREXPERT</a></h1>
+					<!-- Uncomment below if you prefer to use an image logo -->
+					<!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+				</div>
+
+				<nav id="navbar" class="navbar">
+					<ul>
+						<li>
+							<a asp-area="" asp-page="/Index">Home</a>
+						</li>
+						<li>
+							<a asp-area="" asp-page="/about">About</a>
+						</li>
+						<li>
+							<a asp-area="" asp-page="/privacy">Privacy</a>
+						</li>
+						<li>
+							<a asp-area="" asp-page="/login">Login</a>
+						</li>
+						<li>
+							<a asp-area="" asp-page="/register">Register</a>
+						</li>
+					</ul>
+					<i class="bi bi-list mobile-nav-toggle"></i>
+				</nav>
+			</div>
+		</header>
+
+
+
+		<div class="container main">
+			<main role="main" class="pb-3">
+				@RenderBody()
+			</main>
+		</div>
+
+		<footer id="footer">
+
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-lg-3 col-md-6 footer-contact">
+							<h3>PLANCHEREXPERT</h3>
+							<p>
+								A108 Adam Street <br>
+								New York, NY 535022<br>
+								United States <br><br>
+								<strong>Phone:</strong> +1 5589 55488 55<br>
+								<strong>Email:</strong> info@example.com<br>
+							</p>
+						</div>
+
+						<div class="col-lg-2 col-md-6 footer-links">
+							<h4>Useful Links</h4>
+							<ul>
+								<li><i className="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+								<li><i className="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+								<li><i className="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+							</ul>
+						</div>
+
+						<div class="col-lg-3 col-md-6 footer-links">
+							<h4>Our Services</h4>
+							<ul>
+								<li><i className="bx bx-chevron-right"></i> <a href="#">Floor Installation</a></li>
+								<li><i className="bx bx-chevron-right"></i> <a href="#">Hardwood Flooring</a></li>
+								<li><i className="bx bx-chevron-right"></i> <a href="#">Commercial Flooring Solutions</a></li>
+							</ul>
+						</div>
+
+						<div class="col-lg-4 col-md-6 footer-newsletter">
+							<h4>Newsletter</h4>
+							<p>Stay in the loop! Join our newsletter for exclusive updates and special offers. Subscribe now</p>
+							<form action="" method="post">
+								<input type="email" name="email">
+								<input type="submit" value="Subscribe">
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="container d-md-flex py-4">
+
+				<div class="me-md-auto text-center text-md-start">
+					<div class="copyright">
+						&copy; Copyright <strong><span>PLANCHEREXPERT</span></strong>. All Rights Reserved
+					</div>
+					<div class="credits">
+						Designed by <a href="https://github.com/TarekVisch">Tarek Chentouf, 4 IIR, GR 3</a>
+					</div>
+				</div>
+				<div class="social-links text-center text-md-right pt-3 pt-md-0">
+					<a href="https://www.linkedin.com/in/tarek-chentouf/" className="linkedin"><img style="width: 15px; height: 15px" src="~/images/icons/linkedin.svg" alt="in" /></a>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

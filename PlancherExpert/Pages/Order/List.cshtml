@@ -1,0 +1,39 @@
+﻿@page
+@model PlancherExpert.Pages.Order.ListModel
+@{
+	ViewData["title"] = "Order List";
+}
+
+<div class="order">
+	<div class="d-flex justify-content-between align-items-center mb-4">
+		<h2>Orders</h2>
+	</div>
+	<div>
+		<table class="table align-middle mb-0 bg-white">
+			<thead class="bg-light">
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Client</th>
+					<th scope="col">Floor Cover</th>
+					<th scope="col">Width</th>
+					<th scope="col">Height</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td scope="col">#</td>
+					<td scope="col">#</td>
+					<td scope="col">#</td>
+					<td scope="col">#</td>
+					<td scope="col">#</td>
+					<td scope="col" class="table-actions">
+						<a asp-area="" asp-page="view"><img src="~/images/icons/view.svg" alt="View" /></a>
+						<a asp-area="" asp-page="edit"><img src="~/images/icons/edit.svg" alt="Edit" /></a>
+						<a asp-area="" asp-page="delete"><img src="~/images/icons/delete.svg" alt="Delete" /></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

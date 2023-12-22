@@ -1,0 +1,37 @@
+﻿@page
+@model PlancherExpert.Pages.Product.ListModel
+@{
+	ViewData["title"] = "Product List";
+}
+
+<div class="product">
+	<div class="d-flex justify-content-between align-items-center mb-4">
+		<h2>Flooring</h2>
+		<a asp-area="" asp-page="create" class="btn btn-primary">Add Flooring</a>
+	</div>
+	<div>
+		<table class="table align-middle mb-0 bg-white">
+			<thead class="bg-light">
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Name</th>
+					<th scope="col">Price (m<sup>2</sup>)</th>
+					<th scope="col">Installation (m<sup>2</sup>)</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td scope="col">#</td>
+					<td scope="col">#</td>
+					<td scope="col">#</td>
+					<td scope="col">#</td>
+					<td scope="col" class="table-actions">
+						<a asp-area="" asp-page="edit"><img src="~/images/icons/edit.svg" alt="Edit"/></a>
+						<a asp-area="" asp-page="delete"><img src="~/images/icons/delete.svg" alt="delete" /></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
