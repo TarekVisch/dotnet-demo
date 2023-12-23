@@ -10,6 +10,12 @@ namespace PlancherExpert.Pages.Product
 		public List<ProductModel> products = new List<ProductModel>();
 		public void OnGet()
 		{
+			if (HttpContext.Session.GetString("userAuthenticated") != "true" || HttpContext.Session.GetString("userRole") == "user")
+			{
+                Response.Redirect("/Forbidden");
+				return;
+            }
+
 			try
 			{
 				string connectionString = "Data Source=.\\sqlexpress;Initial Catalog=PlancherExpert;Integrated Security=True;TrustServerCertificate=true;";

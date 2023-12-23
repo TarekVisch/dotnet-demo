@@ -7,6 +7,11 @@ namespace PlancherExpert.Pages.Order
     {
         public void OnGet()
         {
-        }
+			if (HttpContext.Session.GetString("userAuthenticated") != "true" || HttpContext.Session.GetString("userRole") == "user")
+			{
+				Response.Redirect("/Forbidden");
+				return;
+			}
+		}
     }
 }

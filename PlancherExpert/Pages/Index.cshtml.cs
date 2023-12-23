@@ -14,7 +14,6 @@ namespace PlancherExpert.Pages
 
 		public void OnGet()
 		{
-
 		}
 	}
 }

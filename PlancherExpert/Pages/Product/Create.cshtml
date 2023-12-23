@@ -11,25 +11,32 @@
 	</div>
 
 	<div class="product-add">
+		@if (Model.ErrorMessage != "")
+		{
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+				<small>@Model.ErrorMessage</small>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> </button>
+			</div>
+		}
 		<form method="post">
 			<div class="row mb-2">
 				<label for="name" class="col-sm-3 col-form-labek">Name</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" id="name" name="name" />
+					<input type="text" class="form-control" id="name" name="name" value="@Model.Product.Name" />
 				</div>
 			</div>
 
 			<div class="row mb-2">
 				<label for="price" class="col-sm-3 col-form-labek">Price (m<sup>2</sup>)</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" id="price" name="price" />
+					<input type="text" class="form-control" id="price" name="price" value="@Model.Product.Price" />
 				</div>
 			</div>
 
 			<div class="row mb-4">
 				<label for="installation" class="col-sm-3 col-form-labek">Installation (m<sup>2</sup>)</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" id="installation" name="installation" />
+					<input type="text" class="form-control" id="installation" name="installation" value="@Model.Product.Installation" />
 				</div>
 			</div>
 

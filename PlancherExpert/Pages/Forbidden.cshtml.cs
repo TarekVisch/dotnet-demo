@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace PlancherExpert.Pages.Order
+namespace PlancherExpert.Pages
 {
-    public class IndexModel : PageModel
+    public class ForbiddenModel : PageModel
     {
         public void OnGet()
         {

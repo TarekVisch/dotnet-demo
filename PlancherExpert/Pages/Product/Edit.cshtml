@@ -12,24 +12,26 @@
 
 	<div class="product-add">
 		<form method="post">
+			<input type="hidden" name="id" value="@Model.Product.Id"/>
+
 			<div class="row mb-2">
 				<label for="name" class="col-sm-3 col-form-labek">Name</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" id="name" name="name" />
+					<input type="text" class="form-control" id="name" name="name" value="@Model.Product.Name" />
 				</div>
 			</div>
 
 			<div class="row mb-2">
 				<label for="price" class="col-sm-3 col-form-labek">Price (m<sup>2</sup>)</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" id="price" name="price" />
+					<input type="text" class="form-control" id="price" name="price" value="@Model.Product.Price"/>
 				</div>
 			</div>
 
 			<div class="row mb-4">
 				<label for="installation" class="col-sm-3 col-form-labek">Installation (m<sup>2</sup>)</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" id="installation" name="installation" />
+					<input type="text" class="form-control" id="installation" name="installation" value="@Model.Product.Installation" />
 				</div>
 			</div>
 
