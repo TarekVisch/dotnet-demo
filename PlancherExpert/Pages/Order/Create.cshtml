@@ -4,7 +4,6 @@
 	ViewData["title"] = "Order Create";
 }
 
-
 <section class="product">
 	<div class="mb-5">
 		<h2>Create Order</h2>
@@ -17,7 +16,7 @@
 				<label for="floorcover" class="col-sm-3 col-form-labek">Floor Covers</label>
 				<div class="col-sm-6">
 					<select class="form-select" name="floorcover" id="floorcover">
-						@foreach (var product in Model.products)
+						@foreach (var product in Model.Products)
 						{
 							<option value="@product.Id">@product.Name</option>
 						}
@@ -67,7 +66,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach (var product in Model.products)
+				@foreach (var product in Model.Products)
 				{
 					<tr>
 						<td scope="col">@product.Id</td>

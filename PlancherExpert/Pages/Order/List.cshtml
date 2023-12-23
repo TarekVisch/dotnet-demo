@@ -21,18 +21,21 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td scope="col">#</td>
-					<td scope="col">#</td>
-					<td scope="col">#</td>
-					<td scope="col">#</td>
-					<td scope="col">#</td>
-					<td scope="col" class="table-actions">
-						<a asp-area="" asp-page="view"><img src="~/images/icons/view.svg" alt="View" /></a>
-						<a asp-area="" asp-page="edit"><img src="~/images/icons/edit.svg" alt="Edit" /></a>
-						<a asp-area="" asp-page="delete"><img src="~/images/icons/delete.svg" alt="Delete" /></a>
-					</td>
-				</tr>
+				@foreach(var order in Model.Orders)
+				{
+					<tr>
+						<td scope="col">@order.Id</td>
+						<td scope="col">@order.ClientId</td>
+						<td scope="col">@order.ProductId</td>
+						<td scope="col">@order.Width</td>
+						<td scope="col">@order.Height</td>
+						<td scope="col" class="table-actions">
+							<a asp-area="" asp-page="view?id=@order.Id"><img src="~/images/icons/view.svg" alt="View" /></a>
+							<a asp-area="" asp-page="edit?id=@order.Id"><img src="~/images/icons/edit.svg" alt="Edit" /></a>
+							<a asp-area="" asp-page="delete?id=@order.Id"><img src="~/images/icons/delete.svg" alt="Delete" /></a>
+						</td>
+					</tr>
+				}
 			</tbody>
 		</table>
 	</div>

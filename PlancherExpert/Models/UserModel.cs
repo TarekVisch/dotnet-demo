@@ -90,13 +90,13 @@ namespace PlancherExpert.Models
 				using (SqlConnection connection = new SqlConnection(connectionString))
 				{
 					connection.Open();
-					String sql = "INSERT INTO Users (username, email, password) VALUES (@Username, @Email, @Password);";
+					String sql = "INSERT INTO Users (username, email, password, created_at, updated_at) VALUES (@Username, @Email, @Password, GETDATE(), GETDATE());";
 
 					using (SqlCommand cmd = new SqlCommand(sql, connection))
 					{
 						cmd.Parameters.AddWithValue("@Username", this.Username);
-						cmd.Parameters.AddWithValue("@lastName", this.Email);
-						cmd.Parameters.AddWithValue("@userLogin", this.Password);
+						cmd.Parameters.AddWithValue("@Email", this.Email);
+						cmd.Parameters.AddWithValue("@Password", this.Password);
 						cmd.ExecuteNonQuery();
 						return true;
 					}

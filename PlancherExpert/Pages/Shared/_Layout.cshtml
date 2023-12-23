@@ -44,6 +44,9 @@
 							if (Context.Session.GetString("userRole") == "admin")
 							{
 								<li>
+									<a asp-area="" asp-page="/Order/List">Orders</a>
+								</li>
+								<li>
 									<a asp-area="" asp-page="/Product/List">Floor Covers</a>
 								</li>
 							}

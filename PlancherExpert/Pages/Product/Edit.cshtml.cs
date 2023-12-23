@@ -24,12 +24,12 @@ namespace PlancherExpert.Pages.Product
 				string Id = Request.Query["id"];
 				string connectionString = "Data Source=.\\sqlexpress;Initial Catalog=PlancherExpert;Integrated Security=True;TrustServerCertificate=true;";
 
-				using (SqlConnection connection = new SqlConnection(connectionString)) //Création de la connection
+				using (SqlConnection connection = new SqlConnection(connectionString))
 				{
-					connection.Open();//Ouvrir La connection
-					String sql = "SELECT * FROM Products WHERE id=@Id;"; //Déclaration de la requête
+					connection.Open();
+					String sql = "SELECT * FROM Products WHERE id=@Id;"; 
 
-					using (SqlCommand cmd = new SqlCommand(sql, connection)) //Exécuter la requête
+					using (SqlCommand cmd = new SqlCommand(sql, connection)) 
 					{
 						cmd.Parameters.AddWithValue("@Id", Id);
 						using (SqlDataReader reader = cmd.ExecuteReader())

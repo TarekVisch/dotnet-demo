@@ -9,7 +9,7 @@
         <div class="container mb-5 mt-3">
             <div class="row d-flex align-items-baseline">
                 <div class="col-xl-9">
-                    <p style="color: #7e8d9f; font-size: 20px">Invoice >> <strong>ID: #1</strong></p>
+                    <p style="color: #7e8d9f; font-size: 20px">Invoice >> <strong>ID: #@Model.Order.Id</strong></p>
                 </div>
                 <hr />
             </div>
@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-xl-8">
                         <ul class="list-unstyled">
-                            <li class="text-muted">To: <span style="color: #5d9fc5">Tarek</span></li>
+                            <li class="text-muted">To: <span style="color: #5d9fc5">@HttpContext.Session.GetString("username")</span></li>
                             <li class="text-muted">Street, City</li>
                             <li class="text-muted">State, Country</li>
                             <li class="text-muted"><i class="fas fa-phone"></i> 123-456-789</li>
@@ -28,10 +28,10 @@
                         <p class="text-muted">Invoice</p>
                         <ul class="list-unstyled">
                             <li class="text-muted">
-                                <i class="fas fa-circle" style="color: #84B0CA"></i> <span class="fw-bold">ID:</span>1
+                                <i class="fas fa-circle" style="color: #84B0CA"></i> <span class="fw-bold">ID: @Model.Order.Id</span>
                             </li>
                             <li class="text-muted">
-                                <i class="fas fa-circle" style="color: #84B0CA"></i> <span class="fw-bold">Creation Date: </span>Dec 23,2023
+                                <i class="fas fa-circle" style="color: #84B0CA"></i> <span class="fw-bold">Creation Date: </span>@Model.Order.CreatedAt.ToString("MMMM dd, yyyy")
                             </li>
                             <li class="text-muted">
                                 <i class="fas fa-circle" style="color: #84B0CA"></i> <span class="me-1 fw-bold">Status:</span><span class="badge bg-warning text-black fw-bold">
@@ -59,11 +59,11 @@
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Tarek</td>
-                                <td>Quality Carpets</td>
-                                <td>2</td>
-                                <td>4</td>
-                                <td>8</td>
+                                <td>@HttpContext.Session.GetString("username").ToUpper()</td>
+                                <td>@Model.Order.ProductId</td>
+                                <td>@Model.Order.Width</td>
+                                <td>@Model.Order.Height</td>
+                                <td>6</td>
                                 <td>3.99</td>
                                 <td>3.25</td>
                             </tr>
