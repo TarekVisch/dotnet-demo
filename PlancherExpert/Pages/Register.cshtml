@@ -7,33 +7,48 @@
 <section class="auth">
 	<div class="auth-container">
 		<h2 class="mb-4 text-center">Register</h2>
-		<form>
+		@if (Model.ErrorMessage != "")
+		{
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+				<small>@Model.ErrorMessage</small>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> </button>
+
+			</div>
+		}
+		@if (HttpContext.Session.GetString("userNotAdded") != null)
+		{
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+				<small>@HttpContext.Session.GetString("userNotAdded") </small>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> </button>
+			</div>
+		}
+		<form method="post">
 			<!-- Username input -->
 			<div class="mb-4">
 				<label class="form-label" for="username">Username</label>
-				<input type="email" id="username" class="form-control" />
+				<input type="text" id="username" name="username" class="form-control" value="@Model.User.Username"/>
 			</div>
 
 			<!-- Email input -->
 			<div class="mb-4">
 				<label class="form-label" for="email">Email Address</label>
-				<input type="email" id="email" class="form-control" />
+				<input type="email" id="email" name="email" class="form-control" value="@Model.User.Email" />
 			</div>
 
 			<!-- Password input -->
 			<div class="mb-4">
 				<label class="form-label" for="password">Password</label>
-				<input type="password" id="password" class="form-control" />
+				<input type="password" id="password" name="password" class="form-control" value="@Model.User.Password" />
 			</div>
 
 			<!-- Re-Password input -->
 			<div class="mb-4">
 				<label class="form-label" for="repassword">Repeat Password</label>
-				<input type="password" id="repassword" class="form-control" />
+				<input type="password" id="repassword" name="repassword" class="form-control" />
 			</div>
 
 			<!-- Submit button -->
-			<button type="button" class="btn btn-primary mb-4">Register</button>
+			<button type="submit" class="btn btn-primary mb-4">Register</button>
 
 			<!-- Register buttons -->
 			<div class="text-center">

@@ -1,6 +1,6 @@
 ﻿namespace PlancherExpert.Models
 {
-	public class Order
+	public class OrderModel
 	{
 		public int Id { get; set; }
 		public string ClientId { get; set; }

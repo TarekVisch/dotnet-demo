@@ -17,7 +17,7 @@ namespace PlancherExpert.Pages.Product
 				using (SqlConnection connection = new SqlConnection(connectionString))
 				{
 					connection.Open();
-					String sql = "SELECT * FROM product;";
+					String sql = "SELECT * FROM products;";
 					using (SqlCommand cmd = new SqlCommand(sql, connection))
 					{
 						using (SqlDataReader reader = cmd.ExecuteReader())
@@ -25,12 +25,12 @@ namespace PlancherExpert.Pages.Product
 							while (reader.Read())
 							{
 								ProductModel product = new ProductModel();
-								product.Id = reader.GetString(0);
+								product.Id = reader.GetInt32(0);
 								product.Name = reader.GetString(1);
 								product.Price = Convert.ToSingle(reader.GetDouble(2));
 								product.Installation = Convert.ToSingle(reader.GetDouble(3));
-								product.CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at")); ;
-								product.UpdatedAt = reader.GetDateTime(reader.GetOrdinal("updated_at")); ;
+								product.CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at"));
+								product.UpdatedAt = reader.GetDateTime(reader.GetOrdinal("updated_at"));
 
 								products.Add(product);
 							}

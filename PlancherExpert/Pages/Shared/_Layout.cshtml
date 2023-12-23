@@ -14,9 +14,9 @@
 			<div class="container d-flex justify-content-between">
 
 				<div class="logo">
-					<h1 class="text-light"><a href="index.html">PLANCHEREXPERT</a></h1>
-					<!-- Uncomment below if you prefer to use an image logo -->
-					<!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+					<a href="/">
+						<img src="~/images/icons/logo.svg" alt="" class="img-fluid">
+					</a>
 				</div>
 
 				<nav id="navbar" class="navbar">
@@ -30,12 +30,31 @@
 						<li>
 							<a asp-area="" asp-page="/privacy">Privacy</a>
 						</li>
-						<li>
-							<a class="button-secondary" asp-area="" asp-page="/login">Login</a>
-						</li>
-						<li>
-							<a class="button-primary" asp-area="" asp-page="/register">Register</a>
-						</li>
+						@if (Context.Session.GetString("userAuthenticated") == null)
+						{
+							<li>
+								<a class="button-secondary" asp-area="" asp-page="/login">Login</a>
+							</li>
+							<li>
+								<a class="button-primary" asp-area="" asp-page="/register">Register</a>
+							</li>
+						}
+						else if (Context.Session.GetString("userAuthenticated") == "true")
+						{
+							if (Context.Session.GetString("userRole") == "admin")
+							{
+								<li>
+									<a asp-area="" asp-page="/Product/List">Floor Covers</a>
+								</li>
+							}
+							<li>
+								<a asp-area="" asp-page="/Order/Create">Order</a>
+							</li>
+							<li>
+								<a asp-area="" asp-page="/logout">Logout</a>
+							</li>
+							<li style="margin-left: 20px">Welcome, <strong>@Context.Session.GetString("username").ToUpper()</strong></li>
+						}
 					</ul>
 					<i class="bi bi-list mobile-nav-toggle"></i>
 				</nav>

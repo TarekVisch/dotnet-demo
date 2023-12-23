@@ -1,11 +1,11 @@
 ﻿@page
 @model PlancherExpert.Pages.Order.CreateModel
 @{
-    ViewData["title"] = "Order Create";
+	ViewData["title"] = "Order Create";
 }
 
 
-<div class="product">
+<section class="product">
 	<div class="mb-5">
 		<h2>Create Order</h2>
 		<hr />
@@ -17,10 +17,10 @@
 				<label for="floorcover" class="col-sm-3 col-form-labek">Floor Covers</label>
 				<div class="col-sm-6">
 					<select class="form-select" name="floorcover" id="floorcover">
-						<option value="volvo">Volvo</option>
-						<option value="saab">Saab</option>
-						<option value="mercedes">Mercedes</option>
-						<option value="audi">Audi</option>
+						@foreach (var product in Model.products)
+						{
+							<option value="@product.Id">@product.Name</option>
+						}
 					</select>
 				</div>
 			</div>
@@ -67,13 +67,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td scope="col">#</td>
-					<td scope="col">#</td>
-					<td scope="col">#</td>
-					<td scope="col">#</td>
-				</tr>
+				@foreach (var product in Model.products)
+				{
+					<tr>
+						<td scope="col">@product.Id</td>
+						<td scope="col">@product.Name</td>
+						<td scope="col">@product.Price</td>
+						<td scope="col">@product.Installation</td>
+					</tr>
+				}
 			</tbody>
 		</table>
 	</div>
-</div>
+</section>
